@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar jogador</title>
+    <link rel="stylesheet" href="_css/reset.css">
+    <link rel="stylesheet" href="_css/style.css">
+    <script src="_js/script.js"></script>
+</head>
+<body>
+ <div id="interface">
+        <nav id="menu">
+                <button id="cadastro">Lançar Pontos</button>
+                <button id="resultado">Ver Resultados</button>
+        </nav>
+        <div id="all">
+            <div id="home">
+
+            </div>
+            <div id="cadastro" class="cadastro">
+                <h2>Lançar Pontos</h2>
+                    <p>Data do jogo</p>
+                    <input type="date" id="dataJogo" value="2014-02-09">
+                    <p>Quantos pontos você fez</p>
+                    <input type="text" id="pontosFeitos" maxlength="100" size="15">
+                    <input type="button" value="Salvar" onclick="salvar()">
+            </div>
+            <div id="resultado" class="result2">
+                <p>Data:</p>
+                <p id="data"></p>
+                <p>Total:</p>
+                <p id="pontosTot"></p>
+            
+            </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function tableshowhide(a,b,c){
+   len = menu.childElementCount;
+   closeall();
+   for(i=0; i<len; i++){
+    menu.children[i].onclick=function(){
+     closeall();
+     all.children[this.id].style.display="block";
+    }
+   }
+
+   function closeall(){
+    for(i=0; i<all.childElementCount;i++){
+     all.children[i].style.display="none";
+    }
+   }
+  }
+
+  tableshowhide("menu", "all", "home");
+    </script>
+</body>
+</html>
